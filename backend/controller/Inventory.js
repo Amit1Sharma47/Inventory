@@ -1,5 +1,15 @@
 const Inventory = require('../model/Inventory')
 
+
+
+//Form
+exports.formReg=(req,res,next)=>{
+    console.log(req.file  )
+    res.status(200).json({
+        sucess:true
+    })
+}
+//userRoutes
 exports.fetchInventory = (req, res, next) => {
     Inventory.findAll().then(item => res.json(item)).catch(err => console.log(err))
 }
